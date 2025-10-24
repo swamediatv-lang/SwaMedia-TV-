@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwaMedia — Swahili Movies & Stories</title>
+  <meta name="description" content="SwaMedia – Your hub for Swahili movies and stories." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Icons (inline SVG defs for reuse) -->
+  <svg class="visually-hidden" aria-hidden="true" focusable="false">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M.057 24l1.687-6.163A11.867 11.867 0 0 1 0 11.88C0 5.318 5.373 0 12 0c3.192 0 6.2 1.245 8.477 3.523A11.88 11.88 0 0 1 24 12c0 6.627-5.373 12-12 12a11.9 11.9 0 0 1-5.646-1.448L.057 24Zm6.597-3.807c1.676.995 3.276 1.591 5.35 1.594 5.448.01 9.91-4.434 9.996-9.882.043-2.673-1.02-5.186-2.996-7.07A9.93 9.93 0 0 0 12.02 2.04C6.58 2.04 2.14 6.49 2.14 11.94c0 1.99.522 3.5 1.677 5.238L3.2 21.02l3.454-.827Zm11.387-5.263c-.065-.108-.238-.173-.5-.303-.262-.13-1.55-.763-1.79-.85-.24-.087-.415-.13-.59.13-.173.26-.68.85-.833 1.025-.152.173-.307.195-.57.065-.262-.13-1.107-.406-2.107-1.293-.78-.696-1.307-1.557-1.46-1.818-.152-.26-.016-.402.114-.532.117-.117.26-.303.39-.455.13-.152.173-.26.26-.433.087-.173.043-.325-.022-.455-.065-.13-.59-1.42-.808-1.943-.213-.512-.43-.44-.59-.447-.152-.007-.325-.009-.5-.009a.963.963 0 0 0-.7.326c-.24.26-.915.895-.915 2.183 0 1.287.938 2.53 1.07 2.705.13.173 1.85 2.83 4.485 3.967.627.27 1.118.432 1.5.553.63.2 1.205.172 1.66.104.507-.075 1.55-.634 1.77-1.246.217-.61.217-1.132.152-1.246Z"/>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z" />
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z" />
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29l6.3 6.3 6.29-6.3 1.42 1.42Z" />
+    </symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22 12.06C22 6.48 17.52 2 11.94 2 6.36 2 1.88 6.48 1.88 12.06c0 5.02 3.66 9.18 8.44 9.95v-7.04H7.94v-2.9h2.38v-2.2c0-2.36 1.4-3.66 3.54-3.66 1.02 0 2.08.18 2.08.18v2.3h-1.17c-1.16 0-1.53.72-1.53 1.46v1.92h2.6l-.42 2.9h-2.18V22c4.78-.77 8.44-4.93 8.44-9.94Z"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.75-3.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/>
+    </symbol>
+    <symbol id="icon-twitter" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22 5.92c-.73.32-1.5.53-2.31.63a4.03 4.03 0 0 0 1.77-2.22 8.07 8.07 0 0 1-2.56.98 4 4 0 0 0-6.82 3.64A11.37 11.37 0 0 1 3.15 4.88a4 4 0 0 0 1.24 5.34 3.97 3.97 0 0 1-1.81-.5v.05a4 4 0 0 0 3.21 3.92c-.44.12-.9.18-1.37.07a4 4 0 0 0 3.73 2.78 8.03 8.03 0 0 1-4.96 1.71c-.32 0-.63-.02-.94-.06A11.33 11.33 0 0 0 9.74 21c7.3 0 11.3-6.05 11.3-11.3 0-.17 0-.34-.01-.51A8.08 8.08 0 0 0 22 5.92Z"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="SwaMedia Home">
+        <span class="brand-mark">Swa</span><span class="brand-mark alt">Media</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg width="24" height="24" aria-hidden="true"><use href="#icon-menu"/></svg>
+        </button>
+        <ul class="nav-links">
+          <li><a class="btn btn-ghost" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Movies Translated <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-external"/></svg></a></li>
+          <li><a class="btn btn-ghost" href="https://swamedia18.blogspot.com/" target="_blank" rel="noopener noreferrer">Chimbo Tata <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-external"/></svg></a></li>
+          <li><a class="btn btn-ghost" href="https://flixmediax.blogspot.com/" target="_blank" rel="noopener noreferrer">Swahili Story <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-external"/></svg></a></li>
+        </ul>
+        <a class="btn btn-whatsapp" href="https://whatsapp.com/channel/0029VbAu07cIN9iqs7vXEM1H" target="_blank" rel="noopener noreferrer" aria-label="Join our WhatsApp channel">
+          <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+          <span>WhatsApp Channel</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="mobile-menu-inner container">
+        <button class="menu-close" aria-label="Close menu">
+          <svg width="24" height="24" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+        <ul class="mobile-links">
+          <li><a class="btn btn-ghost block" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Movies Translated <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-external"/></svg></a></li>
+          <li><a class="btn btn-ghost block" href="https://swamedia18.blogspot.com/" target="_blank" rel="noopener noreferrer">Chimbo Tata <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-external"/></svg></a></li>
+          <li><a class="btn btn-ghost block" href="https://flixmediax.blogspot.com/" target="_blank" rel="noopener noreferrer">Swahili Story <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#icon-external"/></svg></a></li>
+        </ul>
+        <a class="btn btn-whatsapp block" href="https://whatsapp.com/channel/0029VbAu07cIN9iqs7vXEM1H" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+          <span>Join WhatsApp Channel</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="SwaMedia hero">
+      <div class="hero-media" role="img" aria-label="Cinematic collage background"></div>
+      <div class="container hero-inner">
+        <div class="hero-badge">Professional • Trusted • Swahili</div>
+        <h1 class="hero-title"><span class="accent">SwaMedia</span> — Swahili Movies & Stories</h1>
+        <p class="hero-tagline">Your premium hub for translated movies, original stories, and curated entertainment in Swahili.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="https://whatsapp.com/channel/0029VbAu07cIN9iqs7vXEM1H" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+            Join WhatsApp Channel
+          </a>
+          <a class="btn btn-outline" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Explore Movies</a>
+        </div>
+      </div>
+      <div class="hero-gradient"></div>
+    </section>
+
+    <section class="section" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head reveal-on-scroll">
+          <h2 id="featured-title">Featured Movies</h2>
+          <p class="section-sub">Handpicked highlights for you.</p>
+        </div>
+        <div class="card-grid reveal-on-scroll">
+          <article class="card">
+            <a class="card-link" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963f?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">The Golden Frame</h3>
+                <p class="card-meta">Translated • Action • 2h 10m</p>
+              </div>
+            </a>
+          </article>
+          <article class="card">
+            <a class="card-link" href="https://flixmediax.blogspot.com/" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Midnight Tales</h3>
+                <p class="card-meta">Story • Thriller • 12 min read</p>
+              </div>
+            </a>
+          </article>
+          <article class="card">
+            <a class="card-link" href="https://swamedia18.blogspot.com/" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Chimbo Chronicles</h3>
+                <p class="card-meta">Drama • Community • 1h 55m</p>
+              </div>
+            </a>
+          </article>
+          <article class="card">
+            <a class="card-link" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1517602302552-471fe67acf66?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Echoes of Nairobi</h3>
+                <p class="card-meta">Translated • Documentary • 1h 20m</p>
+              </div>
+            </a>
+          </article>
+          <article class="card">
+            <a class="card-link" href="https://flixmediax.blogspot.com/" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Safari Noir</h3>
+                <p class="card-meta">Story • Noir • 10 min read</p>
+              </div>
+            </a>
+          </article>
+          <article class="card">
+            <a class="card-link" href="https://swamedia18.blogspot.com/" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Street Lights</h3>
+                <p class="card-meta">Drama • Urban • 2h 05m</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="latest" aria-labelledby="latest-title">
+      <div class="container">
+        <div class="section-head reveal-on-scroll">
+          <h2 id="latest-title">Latest Uploads</h2>
+          <p class="section-sub">Fresh content from SwaMedia.</p>
+        </div>
+        <div class="card-grid reveal-on-scroll">
+          <article class="card small">
+            <a class="card-link" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Runner's Code</h3>
+                <p class="card-meta">Action • 1h 40m</p>
+              </div>
+            </a>
+          </article>
+          <article class="card small">
+            <a class="card-link" href="https://flixmediax.blogspot.com/" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1497032205916-ac775f0649ae?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">The Quiet Note</h3>
+                <p class="card-meta">Story • Slice of life</p>
+              </div>
+            </a>
+          </article>
+          <article class="card small">
+            <a class="card-link" href="https://swamedia18.blogspot.com/" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Chimbo Diaries</h3>
+                <p class="card-meta">Drama • 55m</p>
+              </div>
+            </a>
+          </article>
+          <article class="card small">
+            <a class="card-link" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">
+              <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1200&auto=format&fit=crop');"></div>
+              <div class="card-body">
+                <h3 class="card-title">Neon Driver</h3>
+                <p class="card-meta">Sci‑Fi • 1h 30m</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="section-head reveal-on-scroll">
+          <h2 id="categories-title">Popular Categories</h2>
+          <p class="section-sub">Discover by genre and type.</p>
+        </div>
+        <div class="chip-row reveal-on-scroll">
+          <a class="chip" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Translated Movies</a>
+          <a class="chip" href="https://flixmediax.blogspot.com/" target="_blank" rel="noopener noreferrer">Stories</a>
+          <a class="chip" href="https://swamedia18.blogspot.com/" target="_blank" rel="noopener noreferrer">Chimbo Tata</a>
+          <a class="chip" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Action</a>
+          <a class="chip" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Drama</a>
+          <a class="chip" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Documentary</a>
+          <a class="chip" href="https://www.swahilimovie.online" target="_blank" rel="noopener noreferrer">Comedy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-labelledby="footer-title">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand brand-small"><span class="brand-mark">Swa</span><span class="brand-mark alt">Media</span></div>
+        <p class="footer-desc">SwaMedia – Your hub for Swahili movies and stories.</p>
+        <p class="copyright">© <span id="year"></span> SwaMedia. All rights reserved.</p>
+      </div>
+      <div class="footer-actions">
+        <div class="socials" aria-label="Social media">
+          <a class="social" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-facebook"/></svg>
+          </a>
+          <a class="social" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-instagram"/></svg>
+          </a>
+          <a class="social" href="#" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-twitter"/></svg>
+          </a>
+        </div>
+        <a class="btn btn-whatsapp" href="https://whatsapp.com/channel/0029VbAu07cIN9iqs7vXEM1H" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+          Join WhatsApp Channel
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="./script.js"></script>
+</body>
+</html>
